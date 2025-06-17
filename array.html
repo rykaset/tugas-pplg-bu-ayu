@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var produk1 = "Modem";
+        var produk2 = "Hardisk";
+        var produk3 = "Flash disk";
+
+        document.write(`${produk1}<br>`);
+        document.write(`${produk2}<br>`);
+        document.write(`${produk3}<br>`);
+
+        var products = ["Flass disk", "SSD", "Monitor"];
+        //menampilkan semua isi array 
+        document.write(`${products}<br>`);
+
+        //menampilkan arra per index
+        document.write(`${products[0]}<br>`);
+        document.write(`${products[1]}<br>`);
+        document.write(`${products[2]}<br>`);
+
+        var myData = [12, 2.1, true, 'c', "Petani Kode"];
+
+        var makanan = ["Nasi Goreng", "Mie Ayam", "Mie Gelas"];
+        //mengambil data "Mie Gelas"
+        document.write(`${makanan[2]}<br>`);
+
+        //membuat array
+        var elektronik = ["senter", "Radio", "Antena", "Obeng"];
+        document.write("<h3>Daftar Produk:</h3>");
+        document.write("<ol>");
+         // menggunakan perulangan untuk mencetak semua isi array
+        for(let i = 0; i < elektronik.length; i++){
+            document.write(`<li>${ elektronik[i] }</li>`);
+        }
+        document.write("</ol>");
+ 
+        var elekt = ["Senter", "Radio", "Antena", "Obeng"];
+
+        document.write("<h3>Daftar produk:</h3>");
+        document.write("<ol>");
+         // menggunakan perulangan untuk mencetak semua isi array
+        elekt.forEach((data) =>  {
+        document.write(`<li>${data}</li>`);
+        });
+        document.write("</ol>");
+
+        var buah = ["apel", "jeruk", "manggis"];
+        document.write(`${buah}<br>`);
+        // menambahkan isi array pada var buah
+        buah[3] = "semangka";
+        document.write(`${buah}<br>`);
+
+        var products = ["senter", "radio", "antena", "obeng"];
+        products.push("televisi");
+        document.write(`${products}<br>`);
+        products.push("Alarm", "Gembok", "Paku");
+        documet.write(`${products}<br>`);
+        delete products[2];;
+        document.write(`${products}<br>`);
+        products.pop();
+        document.write(`${products}<br.`);
+        product.shift();
+        document.write(`${products}<br>`);
+        product.splice(2,1)
+        document.write(`${products}<br>`);
+        products.splice(2,3)
+        document.write(`${products}<br>`);
+
+        var bahasa = ["Javascript", "Kotlin", "Java", "PHP", "Python"];
+        document.write(`${bahasa}<br>`);
+        bahasa[i] = "c++";
+        document.write(`${bahasa}<br>`);
+    </script>
+</body>
+</html>
