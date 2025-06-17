@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ </head>
+ <body>
+ <script>
+ // **1. Membuat Objek Awal Pengguna**
+ const pengguna = {
+ nama: "Pengguna Anonim",
+ usia: null,
+ email: "",
+ kota: "Tidak Diketahui",
+
+ // **2. Metode untuk Menampilkan Informasi Pengguna**
+ tampilkanInfo: function() {
+ console.log("--- Informasi Pengguna ---");
+ console.log(`Nama: ${this.nama}`);
+ console.log(`Usia: ${this.usia === null ? 'Belum diisi' : this.usia}`);
+ console.log(`Email: ${this.email || 'Belum diisi'}`);
+ console.log(`Kota: ${this.kota}`);
+ console.log("-------------------------");
+ },
+
+ // **3. Metode untuk Memperbarui Nama Pengguna**
+ perbaruiNama: function() {
+ const namaBaru = prompt("Masukkan nama baru Anda:");
+ if (namaBaru !== null && namaBaru.trim() !== "") {
+ this.nama = namaBaru.trim();
+ console.log("Nama berhasil diperbarui.");
+ this.tampilkanInfo();
+ } else {
+ console.log("Nama tidak diperbarui.");
+ }
+ },
+// **4. Metode untuk Memperbarui Usia Pengguna**
+ perbaruiUsia: function() {
+ const usiaBaruStr = prompt("Masukkan usia Anda:");
+ if (usiaBaruStr !== null && !isNaN(parseInt(usiaBaruStr))) {
+ this.usia = parseInt(usiaBaruStr);
+ console.log("Usia berhasil diperbarui.");
+ this.tampilkanInfo();
+ } else {
+ console.log("Usia tidak valid atau tidak diperbarui.");
+ }
+ },
+
+ // **5. Metode untuk Memperbarui Email Pengguna**
+ perbaruiEmail: function() {
+ const emailBaru = prompt("Masukkan alamat email Anda:");
+ if (emailBaru !== null) {
+ this.email = emailBaru;
+ console.log("Email berhasil diperbarui.");
+ this.tampilkanInfo();
+ } else {
+ console.log("Email tidak diperbarui.");
+ }
+ },
+
+ // **6. Metode untuk Memperbarui Kota Pengguna**
+ perbaruiKota: function() {
+ const kotaBaru = prompt("Masukkan kota tempat tinggal Anda:");
+ if (kotaBaru !== null && kotaBaru.trim() !== "") {
+ this.kota = kotaBaru.trim();
+ console.log("Kota berhasil diperbarui.");
+ this.tampilkanInfo();
+ } else {
+ console.log("Kota tidak diperbarui.");
+ }
+ }
+ };
+
+ // **7. Penggunaan Awal Objek**
+ pengguna.tampilkanInfo();
+
+ // **8. Berinteraksi dengan Pengguna Menggunakan Prompt**
+ let pilihan;
+
+ do {
+    pilihan = prompt(
+ "Pilih tindakan:\n" +
+ "1. Perbarui Nama\n" +
+ "2. Perbarui Usia\n" +
+ "3. Perbarui Email\n" +
+ "4. Perbarui Kota\n" +
+ "5. Tampilkan Informasi\n" +
+ "6. Keluar"
+ );
+
+ switch (pilihan) {
+ case "1":
+ pengguna.perbaruiNama();
+ break;
+ case "2":
+ pengguna.perbaruiUsia();
+ break;
+ case "3":
+ pengguna.perbaruiEmail();
+ break;
+ case "4":
+ pengguna.perbaruiKota();
+ break;
+ case "5":
+ pengguna.tampilkanInfo();
+ break;
+ case "6":
+ console.log("Terima kasih!");
+ break;
+ default:
+ if (pilihan !== null) {
+ console.log("Pilihan tidak valid. Silakan coba lagi.");
+ }
+ break;
+ }
+ } while (pilihan !== "6");
+ </script>
+ </body>
+ </html>
